@@ -1,0 +1,48 @@
+<div class="d-flex justify-content-center">
+    <div class="w-25">
+        <div class="display-3">
+            Sign-Up
+        </div>
+        <div>
+            <form [autocomplete]="false">
+                <div class="h4">
+                    Registrate en VMT Dev
+                </div>
+                <div>
+                    <label for="firstname">Nombre:</label>
+                    <input class="form-control" [(ngModel)]="signupobject.firstname" type="text" name="firstname" placeholder="Ingresa tu usuario o tu correo" id="firstname">
+                </div>
+                <div>
+                    <label for="lastname">Apellido:</label>
+                    <input class="form-control" type="text" [(ngModel)]="signupobject.lastname" name="lastname" id="lastname" placeholder="Ingresa tu apellido">
+                </div>
+                <div>
+                    <label for="birthdate">Fecha de nacimiento:</label>
+                    <input class="form-control" type="date" [(ngModel)]="signupobject.birthdate" name="birthdate" id="birthdate">
+                </div>
+                <div>
+                    <label for="email">Email:</label>
+                    <input class="form-control" type="email" [(ngModel)]="signupobject.email" name="email" id="email" placeholder="Ingresa tu email">
+                </div>
+                <div>
+                    <label for="phone">Tel&eacute;fono:</label>
+                    <input class="form-control" type="tel" [(ngModel)]="signupobject.phonenumber" name="phone" id="phone" placeholder="Ingresa tu número celular">
+                </div>
+                <div>
+                    <label for="password">Contrase&ntilde;a:</label>
+                    <input class="form-control" [(ngModel)]="firstInputpassword" type="password" name="password" [placeholder]="'Ingresa tu contraseña'" id="password">
+                </div>
+                <div>
+                    <label for="conf-password">Confirmar contrase&ntilde;a:</label>
+                    <input class="form-control" [(ngModel)]="confirmInputpassword" type="password" name="conf-password" [placeholder]="'Confirma tu contraseña'" id="conf-password">
+                </div>
+                <div class="d-flex">
+                    <button class="btn btn-success mt-3 w-100">Registrate</button>
+                </div>
+            </form>
+    
+        </div>
+    </div>
+
+</div>
+
