@@ -17,9 +17,9 @@ import { FormsModule } from '@angular/forms';
     Ejemplo3Component
   ],
   imports: [
+    Ejemplo2Component,
     BrowserModule,
     AppRoutingModule,
-    Ejemplo2Component,
     FormsModule
   ],
   providers: [],

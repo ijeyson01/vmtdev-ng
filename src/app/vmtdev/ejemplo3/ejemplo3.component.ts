@@ -1,4 +1,4 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { EjemploComponent } from '../ejemplo/ejemplo.component';
 import { Ejemplo2Component } from '../ejemplo2/ejemplo2.component';
 
@@ -8,8 +8,20 @@ import { Ejemplo2Component } from '../ejemplo2/ejemplo2.component';
   styles: ``
 })
 export class Ejemplo3Component {
+
+  showLogin: boolean = true;
   
-  @ViewChild(EjemploComponent, { static: false }) elementoLogin!: EjemploComponent;
+  @ViewChild('login') 
+  elementoLogin!: EjemploComponent;
   
-  @ViewChild(Ejemplo2Component, {static: false}) elementoRegistro!: Ejemplo2Component;
+  @ViewChild('signup') elementoRegistro!: Ejemplo2Component;
+
+  switchAuthProcess () {
+    if(this.showLogin){
+      this.showLogin = false;
+    } else {
+      this.showLogin = true;
+    }
+  }
+
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { loginInterface } from '../../interfaces/login.interface';
 
 @Component({
@@ -6,6 +6,8 @@ import { loginInterface } from '../../interfaces/login.interface';
   templateUrl: './ejemplo.component.html'
 })
 export class EjemploComponent {
+
+  @Output() switchEvent = new EventEmitter<any>();
 
   placeholdercontrasenia: string = "Ingresa tu contraseña";
 
@@ -17,5 +19,9 @@ export class EjemploComponent {
 
   loginProces() {
     console.log(JSON.stringify(this.objetoLogin));
+  }
+
+  clicEventEmitter() {
+    this.switchEvent.emit();
   }
 }

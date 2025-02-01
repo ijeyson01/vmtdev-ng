@@ -1,6 +1,9 @@
-<div [hidden]="false">
-    <app-ejemplo></app-ejemplo>
-</div>
-<div [hidden]="true">
-    <app-ejemplo2></app-ejemplo2>
-</div>
+@if(showLogin) {
+    <div>
+        <app-ejemplo id="login" (switchEvent)="switchAuthProcess()"></app-ejemplo>
+    </div>
+} @else {
+    <div>
+        <app-ejemplo2 id="signup"></app-ejemplo2>
+    </div>
+}
