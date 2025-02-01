@@ -8,6 +8,7 @@ import { EjemploComponent } from './vmtdev/ejemplo/ejemplo.component';
 import { Ejemplo2Component } from './vmtdev/ejemplo2/ejemplo2.component';
 import { Ejemplo3Component } from './vmtdev/ejemplo3/ejemplo3.component';
 import { FormsModule } from '@angular/forms';
+import { CrudModule } from './modules/crud/crud.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { FormsModule } from '@angular/forms';
     Ejemplo2Component,
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    CrudModule
   ],
   providers: [],
   bootstrap: [AppComponent]
