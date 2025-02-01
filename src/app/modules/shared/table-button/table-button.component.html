@@ -1,1 +1,6 @@
-<p>table-button works!</p>
+<div class="btn-group" role="group">
+    <input class="btn btn-{{styleButtonUpdate}}" *ngIf="showUpdate" type="button" [value]="labelUpdate" (click)="clicEventUpdate()">
+    <input class="btn btn-{{styleButtonDelete}}" *ngIf="showDelete" type="button" [value]="labelDelete" (click)="clicEventDelete()">
+    <input class="btn btn-{{styleButtonOption}}" *ngIf="showOption" type="button" [value]="labelAditional" (click)="clicEventOption()">
+
+</div>
