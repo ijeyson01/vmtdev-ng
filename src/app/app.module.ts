@@ -9,6 +9,7 @@ import { Ejemplo2Component } from './vmtdev/ejemplo2/ejemplo2.component';
 import { Ejemplo3Component } from './vmtdev/ejemplo3/ejemplo3.component';
 import { FormsModule } from '@angular/forms';
 import { CrudModule } from './modules/crud/crud.module';
+import { SharedModule } from './modules/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CrudModule } from './modules/crud/crud.module';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    CrudModule
+    CrudModule,
+    SharedModule
   ],
   providers: [],
   bootstrap: [AppComponent]

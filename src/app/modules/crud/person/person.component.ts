@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { personDS } from '../../../datasource/person.datasource';
 
 @Component({
   selector: 'app-person',
@@ -7,4 +8,5 @@ import { Component } from '@angular/core';
 })
 export class PersonComponent {
 
+  dataPerson: any[] = personDS;
 }

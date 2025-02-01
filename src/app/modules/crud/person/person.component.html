@@ -11,7 +11,7 @@
                 Last name
             </th>
             <th>
-                Email
+                Genre
             </th>
             <th>
                 Phone
@@ -21,8 +21,22 @@
             </th>
         </thead>
         <tbody>
-            <tr>
-                
+            <tr *ngFor="let person of dataPerson">
+                <td>
+                    {{ person.id }}
+                </td>
+                <td>
+                  {{ person.firstname }}  
+                </td>
+                <td>
+                   {{ person.lastname }}
+                </td>
+                <td>
+                    {{ person.genre }}
+                </td>
+                <td>
+                    {{ person.phone }}
+                </td>
             </tr>
         </tbody>
     </table>
