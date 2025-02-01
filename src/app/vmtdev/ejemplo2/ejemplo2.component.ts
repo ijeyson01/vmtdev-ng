@@ -11,6 +11,8 @@ import { SignupI } from '../../interfaces/signup.interface';
 })
 export class Ejemplo2Component {
 
+  @Output() switchEvent = new EventEmitter<any>();
+
   firstInputpassword: string = '';
   confirmInputpassword: string = '';
   
@@ -20,5 +22,9 @@ export class Ejemplo2Component {
     email: '',
     birthdate: '',
     password: ''
+  }
+
+  clicEventEmitter () {
+    this.switchEvent.emit();
   }
 }
