@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { OutletContext } from '@angular/router';
+import { ButtonTableI } from '../../../interfaces/buttontable.interface';
 
 @Component({
   selector: 'app-table-button',
@@ -9,6 +10,22 @@ import { OutletContext } from '@angular/router';
 export class TableButtonComponent {
 
   @Input()
+  buttonProperties: ButtonTableI = {
+    labelUpdate: 'Update',
+    labelDelete: 'Delete',
+    labelAditional: 'Option',
+    styleButtonUpdate: 'primary',
+    styleButtonDelete: 'danger',
+    styleButtonAditional: 'success',
+    showUpdate: true,
+    showDelete: true,
+    showOption: false,
+    iconButtonUpdate: 'refresh',
+    iconButtonDelete: 'trash',
+    iconButtonAditional: 'plus'
+  }
+
+  /*@Input()
   labelUpdate: string = 'Update';
 
   @Input()
@@ -34,6 +51,15 @@ export class TableButtonComponent {
 
   @Input()
   styleButtonOption: string = 'success'
+
+  @Input()
+  iconButtonUpdate: string = 'refresh';
+
+  @Input()
+  iconButtonDelete: string = 'trash';
+
+  @Input()
+  iconButtonAditional: string = 'plus';*/
 
   @Output() eventUpdate = new EventEmitter();
 

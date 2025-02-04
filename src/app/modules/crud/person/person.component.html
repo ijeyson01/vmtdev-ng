@@ -38,7 +38,8 @@
                     {{ person.phone }}
                 </td>
                 <td>
-                    <app-table-button [showOption]="true" [labelUpdate]="'Actualizar'" [styleButtonOption]="'warning'" [labelAditional]="'Mostrar'"></app-table-button>
+                    <app-table-button [buttonProperties]="buttonProperties">
+                    </app-table-button>
                 </td>
             </tr>
         </tbody>
