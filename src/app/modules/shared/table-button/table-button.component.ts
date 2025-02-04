@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { OutletContext } from '@angular/router';
 import { ButtonTableI } from '../../../interfaces/buttontable.interface';
+import { PersonI } from '../../../interfaces/person.interface';
 
 @Component({
   selector: 'app-table-button',
@@ -24,6 +25,18 @@ export class TableButtonComponent {
     iconButtonDelete: 'trash',
     iconButtonAditional: 'plus'
   }
+
+  @Input()
+  personData: PersonI = {
+        id: 0,
+        firstname: '',
+        lastname: '',
+        fecha_nacimiento: '',
+        genre: '',
+        phone: '',
+        ciudad: '',
+        nivel_estudios: ''
+  };
 
   /*@Input()
   labelUpdate: string = 'Update';

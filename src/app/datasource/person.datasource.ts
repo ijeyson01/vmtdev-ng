@@ -1,4 +1,6 @@
-export const personDS = [
+import { PersonI } from "../interfaces/person.interface";
+
+export const personDS: PersonI[] = [
     {
         "id": 1,
         "firstname": "Carlos",
