@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { AfterViewInit, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { OutletContext } from '@angular/router';
 import { ButtonTableI } from '../../../interfaces/buttontable.interface';
 import { PersonI } from '../../../interfaces/person.interface';
@@ -8,7 +8,25 @@ import { PersonI } from '../../../interfaces/person.interface';
   templateUrl: './table-button.component.html',
   styles: ``
 })
-export class TableButtonComponent {
+export class TableButtonComponent implements OnInit, AfterViewInit {
+  
+  firstNameLocal: string = '';
+  lastNameLocal: string = '';
+  phoneLocal: string = '';
+  
+  ngAfterViewInit(): void { // funcion similar a ngOnInit
+    this.firstNameLocal = this.personData.firstname;
+    this.lastNameLocal = this.personData.lastname;
+    this.phoneLocal = this.personData.phone;
+  }
+  
+  ngOnInit(): void {
+    // this.firstNameLocal = this.personData.firstname;
+    // this.lastNameLocal = this.personData.lastname;
+    // this.phoneLocal = this.personData.phone;
+  }
+
+  
 
   @Input()
   buttonProperties: ButtonTableI = {
@@ -80,6 +98,8 @@ export class TableButtonComponent {
 
   @Output() eventOption = new EventEmitter();
 
+  @Output() eventSave = new EventEmitter<PersonI>();
+
   clicEventUpdate() {
     this.eventUpdate.emit();
   }
@@ -92,4 +112,17 @@ export class TableButtonComponent {
     this.eventOption.emit();
   }
 
+  clicEventSave() {
+    let personUpdate: PersonI = {
+      firstname: this.firstNameLocal,
+      lastname: this.lastNameLocal,
+      phone: this.phoneLocal,
+      ciudad: this.personData.ciudad,
+      fecha_nacimiento: this.personData.fecha_nacimiento,
+      genre: this.personData.genre,
+      nivel_estudios: this.personData.nivel_estudios,
+      id: this.personData.id
+    }
+    this.eventSave.emit(personUpdate);
+  }
 }
