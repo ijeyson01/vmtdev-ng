@@ -1,0 +1,6 @@
+<button class="btn btn-{{ styleButton }}" 
+    *ngIf="showButton" 
+    type="button" [disabled]="disabled"
+    (click)="clickEventUpdate()">
+    <i class="fa fa-{{ iconButton }}"></i>{{ labelButton }}
+</button>

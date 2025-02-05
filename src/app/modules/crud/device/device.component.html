@@ -1,1 +1,24 @@
-<p>device works!</p>
+<div class="m-4">
+    <div class="display-3">
+        Mantenimiento de dispositivos
+    </div>
+    <table class="table table-hover">
+        <thead>
+            <th>#</th>
+            <th>Dispositivo</th>
+            <th>Cantidad</th>
+            <th>Opciones</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let device of deviceList">
+                <td> {{ device.id }}</td>
+                <td> {{ device.name }}</td>
+                <td> {{ device.quantity }}</td>
+                <td> <app-crud-button
+                    [styleButton]="'primary'"
+                    [iconButton]="'refresh'"
+                    ></app-crud-button> </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
