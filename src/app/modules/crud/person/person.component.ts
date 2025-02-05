@@ -12,6 +12,8 @@ export class PersonComponent {
 
   dataPerson: PersonI[] = personDS;
 
+  personUpdateList: PersonI[] = [];
+
   buttonProperties: ButtonTableI = {
       labelUpdate: 'Actualizar',
       labelDelete: 'Delete',
@@ -25,5 +27,10 @@ export class PersonComponent {
       iconButtonUpdate: 'refresh',
       iconButtonDelete: 'trash',
       iconButtonAditional: 'plus'
+    }
+
+    addPersonToUpdate (personUpdate: PersonI) {
+      this.personUpdateList.push(personUpdate);
+      console.info(JSON.stringify(this.personUpdateList));
     }
 }
