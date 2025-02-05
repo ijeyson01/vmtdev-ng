@@ -1,12 +1,14 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { DeviceI } from '../../../interfaces/device.interface';
-
+import { Modal } from 'bootstrap';
 @Component({
   selector: 'app-device',
   templateUrl: './device.component.html',
   styles: ``
 })
 export class DeviceComponent {
+
+  @ViewChild(Modal, {static: true}) deviceModal!: Modal;
 
   deviceList: DeviceI[] = [
     {
@@ -26,4 +28,15 @@ export class DeviceComponent {
     }
   ]
 
+  updateTable(deviceUpdate: DeviceI) {
+    let findDevice = this.deviceList.find( device => device.id === deviceUpdate.id );
+
+    if (findDevice) {
+      let devicePosition = this.deviceList.indexOf(findDevice);
+      this.deviceList.splice(devicePosition, 1);
+      this.deviceList.push(deviceUpdate);
+      this.deviceList.sort( (device1, device2) => device1.id - device2.id)
+    }
+
+  }
 }

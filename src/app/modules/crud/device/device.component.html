@@ -17,6 +17,8 @@
                 <td> <app-crud-button
                     [styleButton]="'primary'"
                     [iconButton]="'refresh'"
+                    [device]="device"
+                    (clickSave)="updateTable($event)"
                     ></app-crud-button> </td>
             </tr>
         </tbody>
