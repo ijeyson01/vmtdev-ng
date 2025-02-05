@@ -10,6 +10,9 @@ export class DeviceComponent {
 
   @ViewChild(Modal, {static: true}) deviceModal!: Modal;
 
+  newDeviceName: string = '';
+  newDeviceQuantity: number = 0;
+
   deviceList: DeviceI[] = [
     {
       id: 1,
@@ -35,8 +38,22 @@ export class DeviceComponent {
       let devicePosition = this.deviceList.indexOf(findDevice);
       this.deviceList.splice(devicePosition, 1);
       this.deviceList.push(deviceUpdate);
+      // ordernar de manera ascendente por id
       this.deviceList.sort( (device1, device2) => device1.id - device2.id)
     }
 
+  }
+  
+  addNewDevice () {
+    // ordernar de manera descendente por id
+    let deviceListDesc = this.deviceList;
+    deviceListDesc.sort((device1, device2) => device2.id - device1.id)
+    let lastDeviceId: number = deviceListDesc[0].id + 1;
+    let newDevice: DeviceI = {
+      id: lastDeviceId,
+      name: this.newDeviceName,
+      quantity: this.newDeviceQuantity
+    }
+    this.deviceList.push(newDevice);
   }
 }
