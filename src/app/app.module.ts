@@ -10,6 +10,7 @@ import { Ejemplo3Component } from './vmtdev/ejemplo3/ejemplo3.component';
 import { FormsModule } from '@angular/forms';
 import { CrudModule } from './modules/crud/crud.module';
 import { SharedModule } from './modules/shared/shared.module';
+import { ShopcartModule } from './modules/shopcart/shopcart.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { SharedModule } from './modules/shared/shared.module';
     AppRoutingModule,
     FormsModule,
     CrudModule,
-    SharedModule
+    SharedModule,
+    ShopcartModule
   ],
   providers: [],
   bootstrap: [AppComponent]
