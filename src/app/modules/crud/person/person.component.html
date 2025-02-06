@@ -37,9 +37,17 @@
                 <td>
                    {{ person.lastname }}
                 </td>
-                <td>
-                    {{ person.genre }}
+                <td [ngSwitch]="person.genre">
+                    <div *ngSwitchCase="'M'">
+                       Male
+                    </div>
+                    <div *ngSwitchCase="'F'">
+                        Female
+                    </div>
                 </td>
+                <!-- <td>
+                    {{ person.genre }}
+                </td> -->
                 <td>
                     {{ person.phone }}
                 </td>
