@@ -1,5 +1,6 @@
 export interface DeviceI {
     id: number,
     name: string,
-    quantity: number
+    quantity: number,
+    price: number
 }

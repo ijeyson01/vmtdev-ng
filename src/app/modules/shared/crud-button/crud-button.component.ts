@@ -11,6 +11,7 @@ export class CrudButtonComponent implements AfterViewInit, OnInit {
   
     name:string = '';
     quantity: number = 0;
+    price: number = 0;
   
   ngOnInit(): void {
     this.name = this.device.name;
@@ -51,7 +52,8 @@ export class CrudButtonComponent implements AfterViewInit, OnInit {
   device: DeviceI = {
     id: 0,
     name: '',
-    quantity: 0
+    quantity: 0,
+    price: 0
   }
 
   // EVENTOS DE SALIDA
@@ -68,7 +70,8 @@ export class CrudButtonComponent implements AfterViewInit, OnInit {
     let deviceUpdate: DeviceI = {
       id: this.device.id,
       name: this.name,
-      quantity: this.quantity
+      quantity: this.quantity,
+      price: this.price
     }
     this.clickSave.emit(deviceUpdate);
   }

@@ -12,22 +12,26 @@ export class DeviceComponent {
 
   newDeviceName: string = '';
   newDeviceQuantity: number = 0;
+  newDevicePrice: number = 0;
 
   deviceList: DeviceI[] = [
     {
       id: 1,
       name: 'Samsung S25 Ultra',
-      quantity: 50
+      quantity: 50,
+      price: 100
     },
     {
       id: 2,
       name: 'Xiami Note 9 pro',
-      quantity: 150
+      quantity: 150,
+      price: 80
     },
     {
       id: 3,
       name: 'Redmi Note 14 pro',
-      quantity: 120
+      quantity: 120,
+      price: 140
     }
   ]
 
@@ -52,7 +56,8 @@ export class DeviceComponent {
     let newDevice: DeviceI = {
       id: lastDeviceId,
       name: this.newDeviceName,
-      quantity: this.newDeviceQuantity
+      quantity: this.newDeviceQuantity,
+      price: this.newDevicePrice
     }
     this.deviceList.push(newDevice);
   }
