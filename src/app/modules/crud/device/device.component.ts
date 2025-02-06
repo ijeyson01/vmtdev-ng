@@ -19,7 +19,7 @@ export class DeviceComponent {
       id: 1,
       name: 'Samsung S25 Ultra',
       quantity: 50,
-      price: 100
+      price: 100.5891
     },
     {
       id: 2,

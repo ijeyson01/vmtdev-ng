@@ -10,14 +10,16 @@
             <th>#</th>
             <th>Dispositivo</th>
             <th>Cantidad</th>
-            <th>Opciones</th>
+            <th class="text-end">Precio</th>
+            <th class="text-center">Opciones</th>
         </thead>
         <tbody>
             <tr *ngFor="let device of deviceList">
                 <td> {{ device.id }}</td>
                 <td> {{ device.name }}</td>
-                <td> {{ device.quantity }}</td>
-                <td> <app-crud-button
+                <td> {{ device.quantity | quantityPipe }}</td>
+                <td class="text-end"> {{ device.price | currency}} </td>
+                <td class="text-center"> <app-crud-button
                     [styleButton]="'primary'"
                     [iconButton]="'refresh'"
                     [device]="device"
