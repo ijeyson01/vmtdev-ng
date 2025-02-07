@@ -1,5 +1,5 @@
-<div>
-    <div class="display-4">
+<div class="form-control m-2 w-50">
+    <div class="display-6">
         Productos en stock
     </div>
     <div>
@@ -9,11 +9,39 @@
                 <th>Producto</th>
                 <th>Proveedor</th>
                 <th>Categoria</th>
+                <th>Precio</th>
                 <th>Stock</th>
                 <th>Opciones</th>
             </thead>
             <tbody>
-                <tr></tr>
+                <tr *ngFor="let producto of listaproduct">
+                    <td> {{ producto.id }} </td>
+                    <td> {{ producto.product }} </td>
+                    <td> {{ producto.provider }} </td>
+                    <td [ngSwitch]="producto.category">
+                        <div *ngSwitchCase="'OC'">
+                            Ocio
+                        </div>
+                        <div *ngSwitchCase="'VA'">
+                            Varios
+                        </div>
+                        <div *ngSwitchCase="'HT'">
+                            Salud
+                        </div>
+                        <div *ngSwitchCase="'CO'">
+                            Cocina
+                        </div>
+                        <div *ngSwitchDefault>
+                            No definido
+                        </div>
+                    </td>
+                    <td> {{ producto.price | currency }} </td>
+                    <td> {{ producto.stock | quantityPipe }} </td>
+                    <td>
+                        <!-- <input class="btn btn-primary" type="button" value="Agregar"> -->
+                        <button class="btn btn-primary" type="button"><i class="fa fa-plus"></i> Agregar</button>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>
