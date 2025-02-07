@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ProductDetailI } from '../../../interfaces/productdetail.interface';
 
 @Component({
@@ -8,5 +8,11 @@ import { ProductDetailI } from '../../../interfaces/productdetail.interface';
 })
 export class TableProductSelectedComponent {
 
+  @Output() eventQuitProduct = new EventEmitter<ProductDetailI>();
+
   listProductSelected: ProductDetailI[] = [];
+
+  quitProduct(product: ProductDetailI) {
+    this.eventQuitProduct.emit(product);
+  }
 }

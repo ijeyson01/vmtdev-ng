@@ -38,7 +38,7 @@
                         <td> {{ producto.stock | quantityPipe }} </td>
                         <td>
                             <!-- <input class="btn btn-primary" type="button" value="Agregar"> -->
-                            <button class="btn btn-primary" type="button"><i class="fa fa-plus"></i> Quitar</button>
+                            <button class="btn btn-danger" type="button" (click)="quitProduct(producto)"><i class="fa fa-trash"></i></button>
                         </td>
                     </tr>
                 }

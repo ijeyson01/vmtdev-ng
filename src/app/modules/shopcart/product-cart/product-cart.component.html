@@ -7,7 +7,12 @@
             <app-table-product (eventAggProduct)="aggProduct($event)"></app-table-product>
         </div>
         <div class="col">
-            <app-table-product-selected></app-table-product-selected>
+            <app-table-product-selected (eventQuitProduct)="quitProduct($event)"></app-table-product-selected>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <app-cart-summary></app-cart-summary>
         </div>
     </div>
 </div>
