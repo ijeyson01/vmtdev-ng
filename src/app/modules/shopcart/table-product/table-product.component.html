@@ -39,7 +39,7 @@
                     <td> {{ producto.stock | quantityPipe }} </td>
                     <td>
                         <!-- <input class="btn btn-primary" type="button" value="Agregar"> -->
-                        <button class="btn btn-primary" type="button" (click)="aggProduct(producto)"><i class="fa fa-plus"></i></button>
+                        <button class="btn btn-primary" type="button" [disabled]="producto.stock == 0" (click)="aggProduct(producto)"><i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
             </tbody>
