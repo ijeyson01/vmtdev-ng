@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ProductDetailI } from '../../../interfaces/productdetail.interface';
 
 @Component({
@@ -7,6 +7,8 @@ import { ProductDetailI } from '../../../interfaces/productdetail.interface';
   styles: ``
 })
 export class TableProductComponent {
+
+  @Output() eventAggProduct = new EventEmitter<ProductDetailI>();
 
   listaproduct: ProductDetailI[] = [
     {
@@ -66,4 +68,14 @@ export class TableProductComponent {
       "category": "VA"
     }
   ];
+
+  aggProduct(product: ProductDetailI) {
+    this.listaproduct.map( productSelected => {
+      if( productSelected.id == product.id) {
+        productSelected.stock = productSelected.stock - 1;
+      }
+    });
+
+    this.eventAggProduct.emit(product);
+  }
 }

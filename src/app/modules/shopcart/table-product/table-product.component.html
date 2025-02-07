@@ -1,4 +1,4 @@
-<div class="form-control m-2 w-50">
+<div class="form-control m-2">
     <div class="display-6">
         Productos en stock
     </div>
@@ -39,7 +39,7 @@
                     <td> {{ producto.stock | quantityPipe }} </td>
                     <td>
                         <!-- <input class="btn btn-primary" type="button" value="Agregar"> -->
-                        <button class="btn btn-primary" type="button"><i class="fa fa-plus"></i> Agregar</button>
+                        <button class="btn btn-primary" type="button" (click)="aggProduct(producto)"><i class="fa fa-plus"></i></button>
                     </td>
                 </tr>
             </tbody>
