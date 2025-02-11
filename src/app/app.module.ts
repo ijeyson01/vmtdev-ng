@@ -11,13 +11,15 @@ import { FormsModule } from '@angular/forms';
 import { CrudModule } from './modules/crud/crud.module';
 import { SharedModule } from './modules/shared/shared.module';
 import { ShopcartModule } from './modules/shopcart/shopcart.module';
+import { NotfoundComponent } from './common/shared/notfound/notfound.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MiprimercomponenteComponent,
     EjemploComponent,
-    Ejemplo3Component
+    Ejemplo3Component,
+    NotfoundComponent
   ],
   imports: [
     Ejemplo2Component,
