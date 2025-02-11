@@ -1,17 +1,17 @@
 <div class="form-control">
     <div>
-        Subtotal: {{ subtotal }}
+        Subtotal: {{ subtotal | currency }}
     </div>
     <div>
-        IVA 15%: {{ iva }}
+        IVA 15%: {{ iva | currency }}
     </div>
     <div>
-        Subtotal + IVA: {{ subtotaliva }}
+        Subtotal + IVA: {{ subtotaliva | currency }}
     </div>
     <div>
-        Descuento: {{ totalDescuento }}
+        Descuento: {{ totalDescuento | currency }}
     </div>
     <div>
-        Total a pagar: {{ totalPago }}
+        Total a pagar: {{ totalPago | currency }}
     </div>
 </div>

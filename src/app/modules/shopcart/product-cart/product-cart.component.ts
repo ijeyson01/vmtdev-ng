@@ -2,6 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { TableProductSelectedComponent } from '../table-product-selected/table-product-selected.component';
 import { ProductDetailI } from '../../../interfaces/productdetail.interface';
 import { TableProductComponent } from '../table-product/table-product.component';
+import { CartSummaryComponent } from '../cart-summary/cart-summary.component';
 
 @Component({
   selector: 'app-product-cart',
@@ -12,6 +13,9 @@ export class ProductCartComponent {
 
   @ViewChild(TableProductSelectedComponent) productSelected!: TableProductSelectedComponent;
   @ViewChild(TableProductComponent) productsStock!: TableProductComponent;
+  @ViewChild(CartSummaryComponent) cartSumary!: CartSummaryComponent;
+
+  discount: number = 0.01;
 
   aggProduct(product: ProductDetailI) {
     let productSelected = product.product;
@@ -49,6 +53,14 @@ export class ProductCartComponent {
       } 
       this.productSelected.listProductSelected.push(newProduct);
     }
+    this.cartSumary.valorDescuento = this.discount;
+    let { subtotalValue, ivaValue, subtotalIvaValue, discountValue, totalValue } = this.subtotalCalc(this.productSelected.listProductSelected);
+    this.cartSumary.subtotal = subtotalValue;
+    this.cartSumary.iva = ivaValue;
+    this.cartSumary.subtotaliva = subtotalIvaValue;
+    this.cartSumary.totalDescuento = discountValue;
+    this.cartSumary.totalPago = totalValue;
+
   }
 
   quitProduct(product: ProductDetailI) {
@@ -73,6 +85,39 @@ export class ProductCartComponent {
       this.productSelected.listProductSelected.splice(indexDeleteProduct, 1);
     }
 
+    this.cartSumary.valorDescuento = this.discount;
+    let { subtotalValue, ivaValue, subtotalIvaValue, discountValue, totalValue } = this.subtotalCalc(this.productSelected.listProductSelected);
+    this.cartSumary.subtotal = subtotalValue;
+    this.cartSumary.iva = ivaValue;
+    this.cartSumary.subtotaliva = subtotalIvaValue;
+    this.cartSumary.totalDescuento = discountValue;
+    this.cartSumary.totalPago = totalValue;
+
+  }
+
+  subtotalCalc(productsSelectedList: ProductDetailI[]) {
+    let subtotalValue: number = 0;
+    let ivaValue: number = 0;
+    let subtotalIvaValue: number = 0;
+    let discountValue: number = 0;
+    let totalValue: number = 0
+    if (productsSelectedList.length > 0) {
+      productsSelectedList.forEach( product => {
+        subtotalValue = subtotalValue + (product.price * product.stock);
+      });
+    }
+
+    ivaValue = subtotalValue * 0.15;
+    subtotalIvaValue = subtotalValue + ivaValue;
+    discountValue = subtotalIvaValue * this.discount;
+    totalValue = subtotalIvaValue - discountValue;
+
+    return { subtotalValue, 
+      ivaValue,
+      subtotalIvaValue,
+      discountValue,
+      totalValue
+     };
   }
 
 }
