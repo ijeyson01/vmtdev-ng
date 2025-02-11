@@ -1,4 +1,5 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
+import { CartSummaryI } from '../../../interfaces/cartsummary.interface';
 
 @Component({
   selector: 'app-cart-summary',
@@ -6,11 +7,15 @@ import { Component, OnChanges, SimpleChanges } from '@angular/core';
   styles: ``
 })
 export class CartSummaryComponent {
-  subtotal: number = 0;
-  iva: number = 0;
-  subtotaliva: number = 0;
-  valorDescuento: number = 0;
-  totalDescuento: number = 0;
-  totalPago: number = 0;
+ 
+  @Input()
+  cartSummary: CartSummaryI = {
+    subtotal: 0,
+    iva: 0,
+    subtotaliva: 0,
+    totalDescuento: 0,
+    totalPago: 0,
+    valorDescuento: 0
+  };
 
 }
