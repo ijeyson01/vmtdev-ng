@@ -10,15 +10,15 @@ export class MenuComponent {
   menuElements: any[] = [
     {
       label: 'Dispositivos',
-      route: '/device'
+      route: 'device'
     },
     {
       label: 'Personas',
-      route: '/person'
+      route: 'person'
     },
     {
       label: 'Carrito',
-      route: '/shop-cart'
+      route: 'shop-cart'
     }
   ]
 }
