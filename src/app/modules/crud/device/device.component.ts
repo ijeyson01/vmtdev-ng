@@ -1,6 +1,7 @@
 import { Component, ViewChild } from '@angular/core';
 import { DeviceI } from '../../../interfaces/device.interface';
 import { Modal } from 'bootstrap';
+import { deviceList } from '../../../datasource/device.datasorurce';
 @Component({
   selector: 'app-device',
   templateUrl: './device.component.html',
@@ -14,26 +15,7 @@ export class DeviceComponent {
   newDeviceQuantity: number = 0;
   newDevicePrice: number = 0;
 
-  deviceList: DeviceI[] = [
-    {
-      id: 1,
-      name: 'Samsung S25 Ultra',
-      quantity: 50,
-      price: 100.5891
-    },
-    {
-      id: 2,
-      name: 'Xiami Note 9 pro',
-      quantity: 150,
-      price: 80
-    },
-    {
-      id: 3,
-      name: 'Redmi Note 14 pro',
-      quantity: 120,
-      price: 140
-    }
-  ]
+  deviceList: DeviceI[] = deviceList;
 
   updateTable(deviceUpdate: DeviceI) {
     let findDevice = this.deviceList.find( device => device.id === deviceUpdate.id );

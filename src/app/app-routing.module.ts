@@ -10,6 +10,10 @@ const routes: Routes = [
     path: 'auth', component: Ejemplo3Component
   },
   {
+    path: 'device',
+    loadChildren: () => import('./modules/crud/crud.module').then( m => m.CrudModule )
+  },
+  {
     path: 'authld',
     loadComponent: () => import('./vmtdev/ejemplo2/ejemplo2.component').then( m => m.Ejemplo2Component )
   },
@@ -18,7 +22,7 @@ const routes: Routes = [
     loadChildren: () => import('./modules/shopcart/shopcart.module').then( m => m.ShopcartModule )
   },
   {
-    path: 'edit-product',
+    path: 'edit-product/:productid',
     loadChildren: () => import('./modules/product/product.module').then( m => m.ProductModule)
   },
   {

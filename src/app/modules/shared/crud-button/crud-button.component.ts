@@ -62,6 +62,8 @@ export class CrudButtonComponent implements AfterViewInit, OnInit {
 
   @Output() clickSave = new EventEmitter<DeviceI>();
 
+  @Output() clicView = new EventEmitter<number>();
+
   clickEventUpdate() {
     this.clickEvent.emit();
   }
@@ -74,6 +76,11 @@ export class CrudButtonComponent implements AfterViewInit, OnInit {
       price: this.price
     }
     this.clickSave.emit(deviceUpdate);
+  }
+
+  clickEventView() {
+    let productid = this.device.id;
+    this.clicView.emit(productid);
   }
 
 }
