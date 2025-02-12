@@ -19,11 +19,13 @@
                 <td> {{ device.name }}</td>
                 <td> {{ device.quantity | quantityPipe }}</td>
                 <td class="text-end"> {{ device.price | currency}} </td>
-                <td class="text-center"> <app-crud-button
+                <td class="text-center"> 
+                    <app-crud-button
                     [styleButton]="'primary'"
                     [iconButton]="'refresh'"
                     [device]="device"
                     (clickSave)="updateTable($event)"
+                    (clicView)="goToEditProduct($event)"
                     ></app-crud-button> </td>
             </tr>
         </tbody>

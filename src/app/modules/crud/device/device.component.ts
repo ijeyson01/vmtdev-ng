@@ -1,7 +1,8 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component, inject, ViewChild } from '@angular/core';
 import { DeviceI } from '../../../interfaces/device.interface';
 import { Modal } from 'bootstrap';
 import { deviceList } from '../../../datasource/device.datasorurce';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-device',
   templateUrl: './device.component.html',
@@ -10,6 +11,9 @@ import { deviceList } from '../../../datasource/device.datasorurce';
 export class DeviceComponent {
 
   @ViewChild(Modal, {static: true}) deviceModal!: Modal;
+
+  constructor( private router: Router){}
+  //router = inject(Router);
 
   newDeviceName: string = '';
   newDeviceQuantity: number = 0;
@@ -42,5 +46,9 @@ export class DeviceComponent {
       price: this.newDevicePrice
     }
     this.deviceList.push(newDevice);
+  }
+
+  goToEditProduct(productid: number) {
+    this.router.navigate(['/edit-product/',productid]);
   }
 }
