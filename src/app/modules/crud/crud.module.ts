@@ -5,6 +5,7 @@ import { DeviceComponent } from './device/device.component';
 import { SharedModule } from '../shared/shared.module';
 import { FormsModule } from '@angular/forms';
 import { CrudRoutingModule } from './crud-routing.module';
+import { MenuModule } from '../menu/menu.module';
 
 
 
@@ -17,7 +18,8 @@ import { CrudRoutingModule } from './crud-routing.module';
     CommonModule,
     SharedModule,
     FormsModule,
-    CrudRoutingModule
+    CrudRoutingModule,
+    MenuModule
   ],
   exports: [
     PersonComponent,

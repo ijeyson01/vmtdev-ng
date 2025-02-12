@@ -1,18 +1,25 @@
-<div class="display-3">
-    Carrito de compras
-</div>
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <app-table-product (eventAggProduct)="aggProduct($event)"></app-table-product>
-        </div>
-        <div class="col">
-            <app-table-product-selected (eventQuitProduct)="quitProduct($event)"></app-table-product-selected>
-        </div>
+<div class="d-flex">
+    <div class="w-25">
+        <app-menu></app-menu>
     </div>
-    <div class="row">
-        <div class="col">
-            <app-cart-summary [cartSummary]="cartSummaryValue"></app-cart-summary>
+    <div class="w-75">
+        <div class="display-3">
+            Carrito de compras
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <app-table-product (eventAggProduct)="aggProduct($event)"></app-table-product>
+                </div>
+                <div class="col">
+                    <app-table-product-selected (eventQuitProduct)="quitProduct($event)"></app-table-product-selected>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <app-cart-summary [cartSummary]="cartSummaryValue"></app-cart-summary>
+                </div>
+            </div>
         </div>
     </div>
 </div>

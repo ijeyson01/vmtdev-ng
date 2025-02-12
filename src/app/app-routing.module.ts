@@ -3,15 +3,19 @@ import { RouterModule, Routes } from '@angular/router';
 import { Ejemplo3Component } from './vmtdev/ejemplo3/ejemplo3.component';
 import { NotFoundError } from 'rxjs';
 import { NotfoundComponent } from './common/shared/notfound/notfound.component';
+import { PersonComponent } from './modules/crud/person/person.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'auth', pathMatch: 'full' },
+  { path: '', redirectTo: 'device', pathMatch: 'full' },
   {
     path: 'auth', component: Ejemplo3Component
   },
   {
     path: 'device',
     loadChildren: () => import('./modules/crud/crud.module').then( m => m.CrudModule )
+  },
+  {
+    path: 'person', component: PersonComponent
   },
   {
     path: 'authld',

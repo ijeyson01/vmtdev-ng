@@ -1,36 +1,44 @@
-<div class="m-4">
-    <div class="display-3">
-        Mantenimiento de dispositivos
+<div class="d-flex">
+    <div class="w-25">
+        <app-menu></app-menu>
     </div>
-    <div>
-        <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newdevice">Nuevo dispositivo</button>
+    <div class="w-75">
+        <div class="m-4">
+            <div class="display-3">
+                Mantenimiento de dispositivos
+            </div>
+            <div>
+                <button class="btn btn-success" data-bs-toggle="modal" data-bs-target="#newdevice">Nuevo dispositivo</button>
+            </div>
+            <table class="table table-hover">
+                <thead>
+                    <th>#</th>
+                    <th>Dispositivo</th>
+                    <th>Cantidad</th>
+                    <th class="text-end">Precio</th>
+                    <th class="text-center">Opciones</th>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let device of deviceList">
+                        <td> {{ device.id }}</td>
+                        <td> {{ device.name }}</td>
+                        <td> {{ device.quantity | quantityPipe }}</td>
+                        <td class="text-end"> {{ device.price | currency}} </td>
+                        <td class="text-center"> 
+                            <app-crud-button
+                            [styleButton]="'primary'"
+                            [iconButton]="'refresh'"
+                            [device]="device"
+                            (clickSave)="updateTable($event)"
+                            (clicView)="goToEditProduct($event)"
+                            ></app-crud-button> </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
     </div>
-    <table class="table table-hover">
-        <thead>
-            <th>#</th>
-            <th>Dispositivo</th>
-            <th>Cantidad</th>
-            <th class="text-end">Precio</th>
-            <th class="text-center">Opciones</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let device of deviceList">
-                <td> {{ device.id }}</td>
-                <td> {{ device.name }}</td>
-                <td> {{ device.quantity | quantityPipe }}</td>
-                <td class="text-end"> {{ device.price | currency}} </td>
-                <td class="text-center"> 
-                    <app-crud-button
-                    [styleButton]="'primary'"
-                    [iconButton]="'refresh'"
-                    [device]="device"
-                    (clickSave)="updateTable($event)"
-                    (clicView)="goToEditProduct($event)"
-                    ></app-crud-button> </td>
-            </tr>
-        </tbody>
-    </table>
 </div>
+
 
 
 <div class="modal fade" id="newdevice" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

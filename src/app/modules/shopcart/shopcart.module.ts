@@ -6,6 +6,7 @@ import { TableProductSelectedComponent } from './table-product-selected/table-pr
 import { ProductCartComponent } from './product-cart/product-cart.component';
 import { CartSummaryComponent } from './cart-summary/cart-summary.component';
 import { ShopCartRoutingModule } from './shopcart-routing.module';
+import { MenuModule } from '../menu/menu.module';
 
 
 
@@ -19,7 +20,8 @@ import { ShopCartRoutingModule } from './shopcart-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    ShopCartRoutingModule
+    ShopCartRoutingModule,
+    MenuModule
   ],
   exports: [
     ProductCartComponent

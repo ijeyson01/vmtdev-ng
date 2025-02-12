@@ -1,0 +1,8 @@
+<div class="form-control h-100" >
+    <div class="display-4">
+        Menu
+    </div>
+    <div *ngFor="let route of menuElements">
+        <button class="btn btn-link" [routerLink]="route.route"> {{ route.label }} </button>
+    </div>
+</div>
