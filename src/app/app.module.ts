@@ -4,9 +4,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MiprimercomponenteComponent } from './vmtdev/miprimercomponente/miprimercomponente.component';
-import { EjemploComponent } from './vmtdev/ejemplo/ejemplo.component';
-import { Ejemplo2Component } from './vmtdev/ejemplo2/ejemplo2.component';
-import { Ejemplo3Component } from './vmtdev/ejemplo3/ejemplo3.component';
+import { LoginComponent } from './vmtdev/login/login.component';
+import { SignupComponent } from './vmtdev/signup/signup.component';
+import { Ejemplo3Component } from './vmtdev/authentication/authentication.component';
 import { FormsModule } from '@angular/forms';
 import { CrudModule } from './modules/crud/crud.module';
 import { SharedModule } from './modules/shared/shared.module';
@@ -17,12 +17,12 @@ import { NotfoundComponent } from './common/shared/notfound/notfound.component';
   declarations: [
     AppComponent,
     MiprimercomponenteComponent,
-    EjemploComponent,
+    LoginComponent,
     Ejemplo3Component,
     NotfoundComponent
   ],
   imports: [
-    Ejemplo2Component,
+    SignupComponent,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

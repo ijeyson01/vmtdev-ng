@@ -1,8 +1,0 @@
-<div *ngIf="showLogin else signup">
-    <app-ejemplo id="login" (switchEvent)="switchAuthProcess()"></app-ejemplo>
-</div>
-<ng-template #signup>
-    <div>
-        <app-ejemplo2 id="signup" (switchEvent)="switchAuthProcess()"></app-ejemplo2>
-    </div>
-</ng-template>

@@ -3,13 +3,13 @@ import { FormsModule } from '@angular/forms';
 import { SignupI } from '../../interfaces/signup.interface';
 
 @Component({
-  selector: 'app-ejemplo2',
-  templateUrl: './ejemplo2.component.html',
-  styleUrl: './ejemplo2.component.css',
+  selector: 'app-signup',
+  templateUrl: './signup.component.html',
+  styleUrl: './signup.component.css',
   standalone: true,
   imports: [FormsModule]
 })
-export class Ejemplo2Component {
+export class SignupComponent {
 
   @Output() switchEvent = new EventEmitter<any>();
 

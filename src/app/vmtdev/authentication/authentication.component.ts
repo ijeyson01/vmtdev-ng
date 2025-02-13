@@ -1,10 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { EjemploComponent } from '../ejemplo/ejemplo.component';
-import { Ejemplo2Component } from '../ejemplo2/ejemplo2.component';
+import { LoginComponent } from '../login/login.component';
+import { SignupComponent } from '../signup/signup.component';
 
 @Component({
-  selector: 'app-ejemplo3',
-  templateUrl: './ejemplo3.component.html',
+  selector: 'app-authentication',
+  templateUrl: './authentication.component.html',
   styles: ``
 })
 export class Ejemplo3Component {
@@ -12,9 +12,9 @@ export class Ejemplo3Component {
   showLogin: boolean = true;
   
   @ViewChild('login') 
-  elementoLogin!: EjemploComponent;
+  elementoLogin!: LoginComponent;
   
-  @ViewChild('signup') elementoRegistro!: Ejemplo2Component;
+  @ViewChild('signup') elementoRegistro!: SignupComponent;
 
   switchAuthProcess () {
     if(this.showLogin){

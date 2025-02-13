@@ -2,10 +2,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { loginInterface } from '../../interfaces/login.interface';
 
 @Component({
-  selector: 'app-ejemplo',
-  templateUrl: './ejemplo.component.html'
+  selector: 'app-login',
+  templateUrl: './login.component.html'
 })
-export class EjemploComponent {
+export class LoginComponent {
 
   @Output() switchEvent = new EventEmitter<any>();
 

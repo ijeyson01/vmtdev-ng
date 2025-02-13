@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Ejemplo3Component } from './vmtdev/ejemplo3/ejemplo3.component';
+import { Ejemplo3Component } from './vmtdev/authentication/authentication.component';
 import { NotFoundError } from 'rxjs';
 import { NotfoundComponent } from './common/shared/notfound/notfound.component';
 import { PersonComponent } from './modules/crud/person/person.component';
@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'authld',
-    loadComponent: () => import('./vmtdev/ejemplo2/ejemplo2.component').then( m => m.Ejemplo2Component )
+    loadComponent: () => import('./vmtdev/signup/signup.component').then( m => m.Ejemplo2Component )
   },
   {
     path: '**',

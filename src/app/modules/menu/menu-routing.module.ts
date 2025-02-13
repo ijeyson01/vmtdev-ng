@@ -5,26 +5,6 @@ import { PersonComponent } from "../crud/person/person.component";
 
 const routes: Routes = [
     { path: '', component: MenuComponent },
-    {
-        path: 'vmt-home',
-        children: [
-          {
-            path: 'device',
-            loadChildren: () => import('./../crud/crud.module').then( m => m.CrudModule )
-          },
-          {
-            path: 'person', component: PersonComponent
-          },
-          {
-            path: 'shop-cart',
-            loadChildren: () => import('./../shopcart/shopcart.module').then( m => m.ShopcartModule )
-          },
-          {
-            path: 'edit-product/:productid',
-            loadChildren: () => import('./../product/product.module').then( m => m.ProductModule)
-          },
-        ]
-      },
 ];
 
 @NgModule({
