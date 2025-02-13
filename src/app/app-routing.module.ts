@@ -6,16 +6,17 @@ import { NotfoundComponent } from './common/shared/notfound/notfound.component';
 import { PersonComponent } from './modules/crud/person/person.component';
 import { MenuComponent } from './modules/menu/menu/menu.component';
 import { AuthGuard } from './guards/auth-guard.guard';
+import { LoginGuard } from './guards/login-guard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'vmt-home', pathMatch: 'full' },
   {
-    path: 'auth', component: AuthenticationComponent
+    path: 'auth', component: AuthenticationComponent, canActivate: [LoginGuard]
   },
   {
     path: 'vmt-home',
     component: MenuComponent,
-    canActivate: [AuthGuard],
+    canLoad: [AuthGuard],
     children: [
       {
         path: 'device',
@@ -36,7 +37,7 @@ const routes: Routes = [
   },
   {
     path: 'authld',
-    loadComponent: () => import('./vmtdev/signup/signup.component').then( m => m.SignupComponent )
+    loadComponent: () => import('./vmtdev/signup/signup.component').then( m => m.SignupComponent ),
   },
   {
     path: '**',
