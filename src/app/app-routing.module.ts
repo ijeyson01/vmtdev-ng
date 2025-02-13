@@ -34,7 +34,7 @@ const routes: Routes = [
   },
   {
     path: 'authld',
-    loadComponent: () => import('./vmtdev/signup/signup.component').then( m => m.Ejemplo2Component )
+    loadComponent: () => import('./vmtdev/signup/signup.component').then( m => m.SignupComponent )
   },
   {
     path: '**',
