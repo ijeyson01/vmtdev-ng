@@ -7,7 +7,7 @@ import { SignupComponent } from '../signup/signup.component';
   templateUrl: './authentication.component.html',
   styles: ``
 })
-export class Ejemplo3Component {
+export class AuthenticationComponent {
 
   showLogin: boolean = true;
   

@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MiprimercomponenteComponent } from './vmtdev/miprimercomponente/miprimercomponente.component';
 import { LoginComponent } from './vmtdev/login/login.component';
 import { SignupComponent } from './vmtdev/signup/signup.component';
-import { Ejemplo3Component } from './vmtdev/authentication/authentication.component';
+import { AuthenticationComponent } from './vmtdev/authentication/authentication.component';
 import { FormsModule } from '@angular/forms';
 import { CrudModule } from './modules/crud/crud.module';
 import { SharedModule } from './modules/shared/shared.module';
@@ -18,7 +18,7 @@ import { NotfoundComponent } from './common/shared/notfound/notfound.component';
     AppComponent,
     MiprimercomponenteComponent,
     LoginComponent,
-    Ejemplo3Component,
+    AuthenticationComponent,
     NotfoundComponent
   ],
   imports: [

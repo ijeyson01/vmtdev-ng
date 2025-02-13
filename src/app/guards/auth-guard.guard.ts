@@ -12,10 +12,11 @@ export class AuthGuard implements CanActivate {
   // }
 
   canActivate(): boolean {
-    if (/* your authentication condition */) {
+    let existsDataSession = localStorage.getItem('logged');
+    if (existsDataSession) {
       return true;
     } else {
-      this.router.navigate(['/login']);
+      this.router.navigate(['/auth']);
       return false;
     }
   }

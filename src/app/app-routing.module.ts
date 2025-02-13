@@ -1,19 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { Ejemplo3Component } from './vmtdev/authentication/authentication.component';
+import { AuthenticationComponent } from './vmtdev/authentication/authentication.component';
 import { NotFoundError } from 'rxjs';
 import { NotfoundComponent } from './common/shared/notfound/notfound.component';
 import { PersonComponent } from './modules/crud/person/person.component';
 import { MenuComponent } from './modules/menu/menu/menu.component';
+import { AuthGuard } from './guards/auth-guard.guard';
 
 const routes: Routes = [
   { path: '', redirectTo: 'vmt-home', pathMatch: 'full' },
   {
-    path: 'auth', component: Ejemplo3Component
+    path: 'auth', component: AuthenticationComponent
   },
   {
     path: 'vmt-home',
     component: MenuComponent,
+    canActivate: [AuthGuard],
     children: [
       {
         path: 'device',
